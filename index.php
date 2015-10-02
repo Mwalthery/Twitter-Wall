@@ -1,3 +1,28 @@
+<?
+
+$authUserHash = 'ce98eb1cf7abbe7ed6a49678c73cc2bbfecbc756891e5223537c327deb7e73d3';
+$authPassHash = 'c570e0e3fb51259da717a6c34a61714f1a6106cf9c67cddcd0b54c309713be9d';
+
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+	header('WWW-Authenticate: Basic realm="Twitter Wall"');
+	header('HTTP/1.0 401 Unauthorized');
+	echo 'bye.';
+	exit;
+} else {
+	if ( 	hash('sha256', $_SERVER['PHP_AUTH_USER']) == $authUserHash && 
+			hash('sha256', $_SERVER['PHP_AUTH_PW']) == $authPassHash) {
+		// do nothing
+	} else {		
+		header('WWW-Authenticate: Basic realm="My Realm"');
+		header('HTTP/1.0 401 Unauthorized');
+		echo 'Text to send if user hits Cancel button';
+		exit;
+	}
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
