@@ -1,3 +1,7 @@
+body{
+	padding-top: 0px;
+}
+
 .control{
 	position: fixed;
 	bottom: 0px;
@@ -43,11 +47,17 @@
 	background-color: DarkRed;
 }
 
-#pauseButton:hover{
+
+#clearButton{
+	background-color: black;
+}
+
+
+#pauseButton:hover, #clearButton:hover{
 	cursor: pointer;
 }
 
-@media (max-width: 520px){
+@media (max-width: 625px){
 	.control{
 		height: 100px;
 	}
@@ -63,10 +73,38 @@
     box-shadow: 0px 0px 5px 5px rgba(255,165,0,0.18);
 }
 
+.headline{
+    display: block;
+    position: relative;
+    height: 100px;
+    width: 90%;
+    text-align: center;
+    font-size: 500%;
+    background-color: indianred;
+	box-shadow: 0px 0px 5px 5px rgba(205,92,92,1);
+    margin: 20px auto 30px auto;
+    padding: 0px;
+    border-radius: 20px;
+}
+
 .newTweet .tweetText, .jumbotron{
 	border-radius: 10px;
 	background-color: rgba(0, 128, 0, 0.18);
     box-shadow: 0px 0px 5px 5px rgba(0, 122, 0, 0.18);
 }
 
+.userPic{
+	margin: 10px;
+	border: 2px solid black;
+    border-radius: 5px;
+}
 
+.tweetedImage{
+	width: 80%;
+	margin-left: 10%;
+}
+
+.jumbotron .tweetedImage{
+	width: 50%;
+	margin-left: 25%;
+}

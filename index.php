@@ -13,16 +13,14 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 			hash('sha256', $_SERVER['PHP_AUTH_PW']) == $authPassHash) {
 		// do nothing
 	} else {		
-		header('WWW-Authenticate: Basic realm="My Realm"');
+		header('WWW-Authenticate: Basic realm="Twitter Wall"');
 		header('HTTP/1.0 401 Unauthorized');
-		echo 'Text to send if user hits Cancel button';
+		echo 'bye.';
 		exit;
 	}
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -54,6 +52,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 
 	<body role="document">
 
+		<div class="headline">
+			#TwitterWall
+		</div>
+
 		<div class="container theme-showcase" role="main">
 
 			<!-- Main jumbotron for a primary marketing message or call to action -->
@@ -76,6 +78,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 			
 			<div class="controlObject">
 				<div class="controlButton" id="pauseButton">PAUSE</div>
+			</div>
+			
+			<div class="controlObject">
+				<div class="controlButton" id="clearButton">CLEAR</div>
 			</div>
 			
 			<div class="controlObject">			

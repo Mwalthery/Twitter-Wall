@@ -51,7 +51,19 @@
 			$thisTweet['username'] = $tweet->user->screen_name;
 			$thisTweet['img'] = $tweet->user->profile_image_url;
 			$thisTweet['id'] = $tweet->id_str;
-		//  $thisTweet['raw'] = $tweet;
+
+			// tweeted a picture
+			if (!empty($tweet->entities->media))
+				$thisTweet['media'] = $tweet->entities->media[0]->media_url;
+
+			// tweeted instagram picture
+			if (!empty($tweet->entities->urls[0]->expanded_url)){
+				$imgurl = $tweet->entities->urls[0]->expanded_url;
+			
+				if (strpos($imgurl, 'instagram'))
+					$thisTweet['media'] = $imgurl . 'media';
+			}
+		
 		
 			array_push($response['tweets'], $thisTweet);
 	
