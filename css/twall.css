@@ -63,7 +63,7 @@ body{
 	}
 }
 
-.tweetText{
+.tweetText, #jumboTweet{
 	word-wrap: break-word;
 }
 
@@ -106,6 +106,7 @@ body{
 
 .jumbotron .tweetedImage{
 	width: auto;
+	max-width: 90%;
 	max-height: 500px;
 	/* margin-left: 25%; */
 }
