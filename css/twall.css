@@ -105,8 +105,8 @@ body{
 }
 
 .jumbotron .tweetedImage{
-	width: 50%;
-	margin-left: 25%;
+	width: auto;
+	/* margin-left: 25%; */
 }
 
 .container{
