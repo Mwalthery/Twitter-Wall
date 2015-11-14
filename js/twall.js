@@ -142,7 +142,7 @@ function printTweets(response){
 	
 	// very latest new tweet gets blown up
 	if (typeof latestTweet.media !== 'undefined'){
-		latestTweet.text += '<img class="tweetedImage" src="' + latestTweet.media + '">';
+		latestTweet.text += '<br><img class="tweetedImage" src="' + latestTweet.media + '">';
 	}
 	
 	$('#jumboTweet').html(latestTweet.text);
@@ -158,7 +158,7 @@ function printTweets(response){
 		tweetDiv +=		'<h2>' + tweet.text + '</h2>';
 		
 		if (typeof tweet.media !== 'undefined') {
-			tweetDiv +=	'<img class="tweetedImage" src="' + tweet.media + '">';
+			tweetDiv +=	'<br><img class="tweetedImage" src="' + tweet.media + '">';
 		}
 		
 		tweetDiv +=		'<p><img class="userPic" src="' + tweet.img + '">' + tweet.username + '</p>';
