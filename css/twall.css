@@ -106,6 +106,7 @@ body{
 
 .jumbotron .tweetedImage{
 	width: auto;
+	max-height: 500px;
 	/* margin-left: 25%; */
 }
 
