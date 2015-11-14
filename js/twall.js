@@ -132,7 +132,7 @@ function printTweets(response){
 	lastID = latestTweet.id;
 
 	// take the latest tweet from jumbo (if not empty) and put it below
-	if ( $('#jumboTweet').html(latestTweet.text)!= '' ){
+	if ( $('#jumboTweet').html()!= '' ){
 		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
 		tweetDiv +=		'<h2>' + $('#jumboTweet').html() + '</h2>';
 		tweetDiv +=		'<p>' + $('#jumboUser').html() + '</p>';
