@@ -61,7 +61,12 @@ body{
 	.control{
 		height: 100px;
 	}
-}
+	
+	.controlButton {
+		width: 70px;
+		font-size: 10px;
+		
+	}
 
 .tweetText, #jumboTweet{
 	word-wrap: break-word;
