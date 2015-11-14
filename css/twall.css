@@ -100,8 +100,8 @@ body{
 }
 
 .tweetedImage{
-	width: 80%;
-	margin-left: 10%;
+	width: auto;
+	/* margin-left: 10%; */
 }
 
 .jumbotron .tweetedImage{
@@ -113,4 +113,6 @@ body{
 	width: 90%;
 }
 
-
+#jumboTweet{
+	text-align: center;
+}
