@@ -133,7 +133,7 @@ function printTweets(response){
 
 	// take the latest tweet from jumbo (if not empty) and put it below
 	if ( $('#jumboTweet').html(latestTweet.text)!= '' ){
-		var tweetDiv = 	'<div class="newTweet col-sm-6"><div class="tweetText">';
+		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
 		tweetDiv +=		'<h2>' + $('#jumboTweet').html() + '</h2>';
 		tweetDiv +=		'<p>' + $('#jumboUser').html() + '</p>';
 		tweetDiv +=		'</div></div>';
@@ -154,7 +154,7 @@ function printTweets(response){
 	
 	// all other new tweets are green and added lower and smaller
 	$.each(reverseTweets, function(i, tweet){
-		var tweetDiv = 	'<div class="newTweet col-sm-6"><div class="tweetText">';
+		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
 		tweetDiv +=		'<h2>' + tweet.text + '</h2>';
 		
 		if (typeof tweet.media !== 'undefined') {
