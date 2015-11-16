@@ -55,8 +55,9 @@ $(window).load(function(){
 	 });
 	 
 	 // clear offensive tweet button
-	 $('.clearButton').bind('click', function(){
+	 $(document).on('click','.clearButton', function(){
 	 	$(this).parent().siblings('.clearable').html('');	 
+	 	$(this).parent().siblings('img.clearable').remove();
 	 });
 	 
 	 
@@ -140,7 +141,7 @@ function printTweets(response){
 	// take the latest tweet from jumbo (if not empty) and put it below
 	if ( $('#jumboTweet').html()!= '' ){
 		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
-		tweetDiv +=		'<h2>' + $('#jumboTweet').html() + '</h2>';
+		tweetDiv +=		'<h2 class="clearable">' + $('#jumboTweet').html() + '</h2>';
 		tweetDiv +=		'<p>' + $('#jumboUser').html() + '</p>';
 		tweetDiv +=		'<div class="clearButtonContainer"><span class="clearButton">[X]</span></div>';
 		tweetDiv +=		'</div></div>';
@@ -161,11 +162,11 @@ function printTweets(response){
 	
 	// all other new tweets are green and added lower and smaller
 	$.each(reverseTweets, function(i, tweet){
-		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText clearable">';
-		tweetDiv +=		'<h2>' + tweet.text + '</h2>';
+		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
+		tweetDiv +=		'<h2 class="clearable">' + tweet.text + '</h2>';
 		
 		if (typeof tweet.media !== 'undefined') {
-			tweetDiv +=	'<br><img class="tweetedImage" src="' + tweet.media + '">';
+			tweetDiv +=	'<br><img class="tweetedImage clearable" src="' + tweet.media + '">';
 		}
 		
 		tweetDiv +=		'<p><img class="userPic" src="' + tweet.img + '">' + tweet.username + '</p>';
