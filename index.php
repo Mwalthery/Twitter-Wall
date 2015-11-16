@@ -60,8 +60,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 
 			<!-- Main jumbotron for a primary marketing message or call to action -->
 			<div id="jumbo" class="jumbotron">
-				<h1 id="jumboTweet">Welcome to Twitter Wall</h1>
+				<h1 id="jumboTweet" class="clearable">Welcome to Twitter Wall</h1>
 				<p id="jumboUser">@MatthewZipkin</p>
+				<div class="clearButtonContianer"><span class="clearButton">[X]</span></div>
 			</div>
 
 			<!-- old tweet stack up here -->		

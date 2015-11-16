@@ -124,3 +124,19 @@ body{
 #jumboTweet{
 	text-align: center;
 }
+
+.clearButton{
+	float: right;
+	font-family: courier;
+	color: black;
+}
+
+.clearButton:hover{
+	cursor: pointer;
+	color: red;
+}
+
+.clearButtonContainer{
+    display: inline-block;
+    width: 100%;
+}

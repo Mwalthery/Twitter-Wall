@@ -47,12 +47,18 @@ $(window).load(function(){
 			
 			// change button to toggle back to whatever we started as
 			$(this).html('GO');
-			$(this).css('background-color', 'FOrestGreen');
+			$(this).css('background-color', 'ForestGreen');
 			
 			// indicate new current status
 			setStatus('PAUSED', 'gray');
 		}
 	 });
+	 
+	 // clear offensive tweet button
+	 $('.clearButton').bind('click', function(){
+	 	$(this).parent().siblings('.clearable').html('');	 
+	 });
+	 
 	 
 	 // run first loop
 	 printHeadline();
@@ -136,6 +142,7 @@ function printTweets(response){
 		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
 		tweetDiv +=		'<h2>' + $('#jumboTweet').html() + '</h2>';
 		tweetDiv +=		'<p>' + $('#jumboUser').html() + '</p>';
+		tweetDiv +=		'<div class="clearButtonContainer"><span class="clearButton">[X]</span></div>';
 		tweetDiv +=		'</div></div>';
 		$('#oldTweets').prepend(tweetDiv);
 	}
@@ -154,7 +161,7 @@ function printTweets(response){
 	
 	// all other new tweets are green and added lower and smaller
 	$.each(reverseTweets, function(i, tweet){
-		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText">';
+		var tweetDiv = 	'<div class="newTweet col-sm-4"><div class="tweetText clearable">';
 		tweetDiv +=		'<h2>' + tweet.text + '</h2>';
 		
 		if (typeof tweet.media !== 'undefined') {
@@ -162,6 +169,7 @@ function printTweets(response){
 		}
 		
 		tweetDiv +=		'<p><img class="userPic" src="' + tweet.img + '">' + tweet.username + '</p>';
+		tweetDiv +=		'<div class="clearButtonContainer"><span class="clearButton">[X]</span></div>';
 		tweetDiv +=		'</div></div>';
 		
 		$('#oldTweets').prepend(tweetDiv);
